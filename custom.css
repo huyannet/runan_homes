@@ -1,0 +1,23 @@
+/* Add here all your css styles (customizations) */
+.table-nn {padding-left:15px; padding-right:15px;}
+.table-nn tr td h3,
+.table-nn tr td h4,
+.table-nn tr td h5,
+.table-nn tr td h6 {margin:0px; padding:0px; font-size:13px;}
+table tr th {background:#f1f1f1;}
+.table-details h2,
+.table-details h3,
+.table-details h4,
+.table-details h5,
+.table-details h6 {margin:0px; padding:0px; font-size:13px;}
+.news-v3 h2 {font-size:22px; margin-bottom:10px; line-height:28px;}
+.news-v3 h2 a,
+.news-v3 h2 a:link,
+.news-v3 h2 a:visited {color:#72C02C;font-weight:600;}
+.news-v3 h2 a:hover {color:#444; }
+.news-v3 h3 {margin:0px; padding:0px; font-size:14px;}
+ul.pagination li.border-left span {border:none; border-left:1px solid #ddd;}
+ul.pagination li.border-right span {border:none; border-right:1px solid #ddd;border-left:1px solid #ddd;}
+.social {text-align:right; overflow:hidden; width:230px; float:right; padding-bottom:10px; clear:both;}
+.social .facebook {float:left; width:150px;}
+.social .google {float:right; width:60px;}
