@@ -26,6 +26,9 @@ jobs:
           echo 'huyannet:123456' | sudo chpasswd
           sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
       - name: Đang cài giao diện đồ họa
+          with:
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
           export DEBIAN_FRONTEND=noninteractive
           sudo apt update
@@ -38,7 +41,7 @@ jobs:
         
       - name: Đang thiết lập các tùy chỉnh
         run: |
-          sudo cut -d: -f1 /etc/passwd
-          su - huyannet -c '${{ github.event.inputs.authcode }} --pin=${{ github.event.inputs.pincode }}'
+          cmd=${{ github.event.inputs.authcode }} --pin=${{ github.event.inputs.pincode }}
+          su - huyannet -c '${{cmd}}'
           sudo adduser huyannet chrome-remote-desktop
           sudo service chrome-remote-desktop start
