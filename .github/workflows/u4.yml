@@ -41,7 +41,7 @@ jobs:
           sudo wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
           sudo wget -P "/tmp/" https://dl.google.com/linux/linux_signing_key.pub
           sudo apt-key add /tmp/linux_signing_key.pub          
-          sudo dpkg --install chrome-remote-desktop_current_amd64.deb; 
+          sudo dpkg --install chrome-remote-desktop_current_amd64.deb
           sudo apt install --assume-yes --fix-broken
           sudo apt-get clean
           sudo rm -rf /var/cache/* /var/log/apt/* /var/lib/apt/lists/*
@@ -53,12 +53,13 @@ jobs:
           sudo mkdir -p /home/chrome/.config/chrome-remote-desktop
           sudo mkdir -p /home/chrome/.fluxbox
           sudo apt install --assume-yes --fix-broken
-          
+          sudo echo "export CHROME_REMOTE_DESKTOP_DEFAULT_DESKTOP_SIZES=1600x1200,3840x2560" >> ~/.profile
       - name: Đang thiết lập các tùy chỉnh
         run: |
           sudo bash
           ${{ github.event.inputs.authcode }} --pin=${{ github.event.inputs.pincode }}
           sudo adduser huyannet chrome-remote-desktop
           sudo service chrome-remote-desktop restart
+          sudo systemctl restart chrome-remote-desktop@huyannet
 
 
