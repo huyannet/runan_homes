@@ -26,9 +26,6 @@ jobs:
           echo 'huyannet:123456' | sudo chpasswd
           sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
       - name: Đang cài giao diện đồ họa
-          with:
-            username: ${{ secrets.DOCKERHUB_USERNAME }}
-            password: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
           export DEBIAN_FRONTEND=noninteractive
           sudo apt update
