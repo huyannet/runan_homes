@@ -27,7 +27,7 @@ jobs:
           sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
       - name: Đang cài giao diện đồ họa
         run: |
-          export DEBIAN_FRONTEND=noninteractive apt install --assume-yes xfce4 desktop-base
+          export DEBIAN_FRONTEND=noninteractive
           sudo apt update
           sudo apt install --assume-yes xfce4 desktop-base xfce4-terminal
           sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
