@@ -41,4 +41,5 @@ jobs:
           sudo bash
           ${{ github.event.inputs.authcode }} --pin=${{ github.event.inputs.pincode }}
           sudo adduser huyannet chrome-remote-desktop
-          sudo service chrome-remote-desktop start
+          sudo /etc/init.d/chrome-remote-desktop start
+
