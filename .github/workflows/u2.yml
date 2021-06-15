@@ -30,7 +30,7 @@ jobs:
           export DEBIAN_FRONTEND=noninteractive
           sudo apt update
           sudo apt install --assume-yes xfce4 desktop-base xfce4-terminal
-          sudo bash -c 'echo \"exec /etc/X11/Xsession /usr/bin/xfce4-session\" > /etc/chrome-remote-desktop-session'
+          sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
           sudo apt remove --assume-yes gnome-terminal
           sudo apt remove --assume-yes xscreensaver
           sudo systemctl disable lightdm.service
