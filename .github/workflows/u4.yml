@@ -29,7 +29,7 @@ jobs:
         run: |
           export DEBIAN_FRONTEND=noninteractive
           sudo apt update
-          sudo apt install --assume-yes wget xfce4 desktop-base xbase-clients xfce4-terminal 
+          sudo apt install --assume-yes wget xfce4 desktop-base xbase-clients python3-psutil xfce4-terminal 
           sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
           sudo apt remove --assume-yes gnome-terminal
           sudo apt remove --assume-yes xscreensaver
