@@ -38,6 +38,6 @@ jobs:
         
       - name: Đang thiết lập các tùy chỉnh
         run: |
-          su - huyannet -c '${{${{ github.event.inputs.authcode }} --pin=${{ github.event.inputs.pincode }}}}'
+          su - huyannet -c '${{ github.event.inputs.authcode }} --pin=${{ github.event.inputs.pincode }}'
           sudo adduser huyannet chrome-remote-desktop
           sudo service chrome-remote-desktop start
