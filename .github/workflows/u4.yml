@@ -61,9 +61,7 @@ jobs:
           cd /tmp
           sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
-          ./google-chrome-stable --no-sandbox
-          #sudo dpkg --install chrome-remote-desktop_current_amd64.deb
-          
+          sudo apt install --assume-yes --fix-broken
           sudo apt-get clean
           sudo rm -rf /var/cache/* /var/log/apt/* /var/lib/apt/lists/*
           sudo groupadd chrome-remote-desktop
