@@ -11,6 +11,19 @@ on:
         description: 'Nhập mã pin remote desktop (6 số)'
         required: true
 
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  issues: write
+  discussions: write
+  packages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: write
+  statuses: write
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
