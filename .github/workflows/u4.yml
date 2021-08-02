@@ -51,9 +51,10 @@ jobs:
 
       - name: Đang cài đặt Chrome Remote Desktop
         run: |
+          sudo apt update 2>/dev/null | grep packages | cut -d '.' -f 1
           sudo wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb      
           sudo wget -P "/tmp/linux_signing_key.pub" "https://dl.google.com/linux/linux_signing_key.pub" > /dev/null
-          sudo apt-key add "/tmp/linux_signing_key.pub"
+          sudo apt-key add "/tmp/linux_signing_key.pub" > /dev/null
           sudo dpkg --install chrome-remote-desktop_current_amd64.deb
           sudo apt install --assume-yes --fix-broken
           sudo apt-get clean
