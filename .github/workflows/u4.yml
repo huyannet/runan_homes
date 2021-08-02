@@ -39,6 +39,17 @@ jobs:
           echo 'huyannet:123456' | sudo chpasswd
           sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 
+      - name: Đang cài giao diện đồ họa
+        run: |
+          export DEBIAN_FRONTEND=noninteractive
+          sudo apt update
+          sudo apt install --assume-yes wget xfce4 desktop-base xbase-clients python3-psutil xfce4-terminal 
+          sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
+          sudo apt remove --assume-yes gnome-terminal
+          sudo apt remove --assume-yes xscreensaver
+          sudo systemctl disable lightdm.service
+          sudo apt install --assume-yes --fix-broken
+          
       - name: Đang cài đặt Chrome Remote Desktop
         run: |
           sudo apt-get update
@@ -58,17 +69,6 @@ jobs:
           sudo mkdir -p /home/chrome/.fluxbox
           sudo apt install --assume-yes --fix-broken
           sudo echo "export CHROME_REMOTE_DESKTOP_DEFAULT_DESKTOP_SIZES=1600x1200,3840x2560" >> ~/.profile
-          
-      - name: Đang cài giao diện đồ họa
-        run: |
-          export DEBIAN_FRONTEND=noninteractive
-          sudo apt update
-          sudo apt install --assume-yes wget xfce4 desktop-base xbase-clients python3-psutil xfce4-terminal 
-          sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
-          sudo apt remove --assume-yes gnome-terminal
-          sudo apt remove --assume-yes xscreensaver
-          sudo systemctl disable lightdm.service
-          sudo apt install --assume-yes --fix-broken
 
       - name: Đang thiết lập các tùy chỉnh
         run: |
